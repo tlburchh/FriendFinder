@@ -22,9 +22,9 @@ function bestFriends(user) {
     for ( var i=0; i<friendsArray.length -1; i++){
         var count = 0;
         var sum = 0;
-        for (var j=0;; j<10; j++) {
+        for (var j=0; j<10; j++) {
             var friendNum = parseInt(friendsArray[i].scores[j]);
-            var userNum = parseInt(iser.scores[j]);
+            var userNum = parseInt(user.scores[j]);
             sum = sum + Math.abs(friendNum - userNum);
             count++;
             if (count == 10) {
@@ -51,7 +51,8 @@ function findBest() {
             return displayBestFriend();
         }
 }
+}
 
 function displayBestFriend() {
-    console.log(BFFName + BFFPic);
+    console.log(bestName + bestPic);
 }
