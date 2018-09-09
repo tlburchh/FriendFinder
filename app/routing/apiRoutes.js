@@ -12,6 +12,7 @@ module.exports = function(app, path){
         friendsArray.push(user);
         res.json(friendsArray);
         bestFriends(user);
+    
     });
 };
 
@@ -38,21 +39,21 @@ function bestFriends(user) {
     findBest();
 }
 
-var bestName;
-var bestPic;
+var bestNamePic;
+
 function findBest() {
     console.log(Math.min(...totals) + "min");
     var minDiff = Math.min(...totals);
     for (var l=0; l<totals.length; l++) {
         if (minDiff === totals[l]) {
             console.log(friendsArray[l]);
-            bestName = friendsArray[l].name;
-            bestPic = friendsArray[l].photo;
-            return displayBestFriend();
+            bestNamePic = friendsArray[l].name & friendsArray[l].photo;
+            return bestNamePic;
+            
         }
 }
 }
 
-function displayBestFriend() {
-    console.log(bestName + bestPic);
-}
+
+    res.json(bestNamePic);
+
